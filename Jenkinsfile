@@ -8,6 +8,7 @@ node('master') {
 
     stage('Release') {
         sh 'git checkout develop'
+        sh 'git pull'
         sh 'git remote -v'
         sh "touch toto.txt"
         sh "git add -A"
