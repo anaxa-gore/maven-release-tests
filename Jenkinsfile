@@ -7,7 +7,7 @@ node('master') {
     }
 
     stage('Release') {
-        sh "touch toto.txt
+        sh "touch toto.txt"
         sh "git commit -a -m 'Test !!!'"
     }
 }
