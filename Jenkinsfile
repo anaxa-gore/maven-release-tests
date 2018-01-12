@@ -3,12 +3,11 @@ def mavenConfig = "globalMaven"
 
 node('master') {
     stage('Checkout') {
+            deleteDir
             checkout scm
     }
 
     stage('Release') {
-        deleteDir
-
         sh 'git checkout develop'
         sh 'git pull'
         sh 'git remote -v'
