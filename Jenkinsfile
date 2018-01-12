@@ -8,6 +8,8 @@ node('master') {
 
     stage('Release') {
         sh "touch toto.txt"
+        sh "git add -A"
         sh "git commit -a -m 'Test !!!'"
+        sh "git push"
     }
 }
