@@ -7,6 +7,7 @@ node('master') {
     }
 
     stage('Release') {
+        sh 'git checkout develop'
         sh "touch toto.txt"
         sh "git add -A"
         sh "git commit -a -m 'Test !!!'"
