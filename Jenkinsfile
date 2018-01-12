@@ -3,7 +3,7 @@ def mavenConfig = "globalMaven"
 
 node('master') {
     stage('Checkout') {
-            deleteDir
+            deleteDir()
             checkout scm
     }
 
