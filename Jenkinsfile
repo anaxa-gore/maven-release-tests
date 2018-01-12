@@ -8,7 +8,7 @@ node('master') {
     }
 
     stage('Release') {
-        sshagent(credentials: ['toto']) {
+        sshagent(credentials: ['root']) {
             sh 'git checkout develop'
             sh 'git pull'
             sh 'git remote -v'
