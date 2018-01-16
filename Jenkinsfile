@@ -13,7 +13,7 @@ node('master') {
             sh 'git pull'
             sh 'git remote -v'
             sh "touch toto.txt"
-            sh "cat 'coco' >> toto.txt"
+            sh 'cat "coco" >> toto.txt'
             sh "git add -A"
             sh "git commit -a -m 'Test !!!'"
             sh "git push --all origin"
