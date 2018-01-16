@@ -10,7 +10,7 @@ node('master') {
     }
 
     stage('Release') {
-        if(!env.BRANCH_NAME.startWith("RELEASE_"))
+        if(!env.BRANCH_NAME.startsWith("RELEASE_"))
             return;
 
         releaseJava("10.3.2");
