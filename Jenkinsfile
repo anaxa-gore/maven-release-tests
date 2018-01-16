@@ -1,3 +1,5 @@
+@Library('apave-shared-library') _
+
 def maven = "M3"
 def mavenConfig = "globalMaven"
 
@@ -8,7 +10,11 @@ node('master') {
     }
 
     stage('Release') {
-        sshagent(credentials: ['GitlabApave']) {
+        if(!env.BRANCH_NAME.startWith("RELEASE_"))
+            return;
+
+        releaseJava("10.3.2");
+/**        sshagent(credentials: ['GitlabApave']) {
             sh 'git checkout develop'
             sh 'git pull'
             sh 'git remote -v'
@@ -18,5 +24,6 @@ node('master') {
             sh "git commit -a -m 'Test !!!'"
             sh "git push --all origin"
         }
+**/
     }
 }
