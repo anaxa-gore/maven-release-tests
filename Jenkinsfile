@@ -8,7 +8,7 @@ node('master') {
     }
 
     stage('Release') {
-        sshagent(credentials: ['GitlabApave']) {
+        //sshagent(credentials: ['GitlabApave']) {
             sh 'git checkout develop'
             sh 'git pull'
             sh 'git remote -v'
@@ -16,6 +16,6 @@ node('master') {
             sh "git add -A"
             sh "git commit -a -m 'Test !!!'"
             sh "git push --all origin"
-        }
+        //}
     }
 }
