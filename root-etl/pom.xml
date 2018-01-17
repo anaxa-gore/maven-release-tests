@@ -15,11 +15,11 @@
     <distributionManagement>
         <repository>
             <id>releases</id>
-            <url>http://slx0007p.cld.apave.grp:8081/repository/maven-etl-releases/</url>
+            <url>http://srv0270a.apave.grp:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>releases</id>
-            <url>http://slx0007p.cld.apave.grp:8081/repository/maven-etl-snapshots/</url>
+            <id>snapshots</id>
+            <url>http://srv0270a.apave.grp:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
