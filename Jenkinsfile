@@ -16,7 +16,7 @@ node('master') {
         def nextReleaseVersion = input(
             message: "Prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.",
             id: "AskForNextReleaseNumber",
-            ok: "OK"
+            ok: "OK",
             parameters: [
                 [$class: 'StringParameterDefinition',
                  description: 'Prochaine version',
