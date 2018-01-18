@@ -14,7 +14,7 @@ node('master') {
             return;
 
         def nextReleaseVersion = input(
-            message: "Entrer la prochaine version de développement"
+            message: "Entrer la prochaine version de développement",
             id: "AskForNextReleaseNumber",
             parameters: [
                 [$class: 'TextParameterDefinition', description: 'Prochaine version', name: nextVersion]
