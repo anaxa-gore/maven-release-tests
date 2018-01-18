@@ -14,8 +14,9 @@ node('master') {
             return;
 
         def nextReleaseVersion = input(
-            message: "Prochaine version de développement (correspond à la prochaine release )",
+            message: "Prochaine version de développement",
             id: "AskForNextReleaseNumber",
+            ok: "OK"
             parameters: [
                 [$class: 'StringParameterDefinition',
                  description: 'Prochaine version',
@@ -24,6 +25,10 @@ node('master') {
 
         // @TODO Check format numéro de version
 
-        releaseJava(nextReleaseVersion);
+        try {
+            releaseJava(nextReleaseVersion);
+        } catch(e) {
+            throw new Error("La release a échoué", e);
+        }
     }
 }
