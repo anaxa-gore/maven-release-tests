@@ -5,10 +5,10 @@
   <parent>
     <groupId>com.apave</groupId>
     <artifactId>root</artifactId>
-    <version>10.3.2-SNAPSHOT</version>
+    <version>3.9</version>
   </parent>
   <artifactId>root-esb</artifactId>
-  <version>10.3.2-SNAPSHOT</version>
+  <version>3.9</version>
   <packaging>pom</packaging>
   <name>Projet racine projets ESB</name>
   <description>Projet racine spécifiant les repositories de snapshots et releases.</description>
