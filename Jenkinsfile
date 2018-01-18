@@ -14,13 +14,14 @@ node('master') {
             return;
 
         def nextReleaseVersion = input(
-            message: "Prochaine version de développement (X.Y.1)",
+            message: "Prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.",
             id: "AskForNextReleaseNumber",
             ok: "OK"
             parameters: [
                 [$class: 'StringParameterDefinition',
                  description: 'Prochaine version',
-                 name: 'nextVersion']
+                 name: 'nextVersion',
+                 defaultValue: null]
             ]);
 
         // @TODO Check format numéro de version
