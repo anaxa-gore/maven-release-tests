@@ -5,10 +5,10 @@
   <parent>
     <groupId>com.apave</groupId>
     <artifactId>root</artifactId>
-    <version>${nextDevelopmentVersion}-SNAPSHOT</version>
+    <version>3.7</version>
   </parent>
   <artifactId>root-etl</artifactId>
-  <version>${nextDevelopmentVersion}-SNAPSHOT</version>
+  <version>3.7</version>
   <packaging>pom</packaging>
   <name>Projet racine projets ETL</name>
   <description>Projet racine spécifiant les repositories de snapshots et releases.</description>

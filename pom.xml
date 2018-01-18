@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.apave</groupId>
   <artifactId>root</artifactId>
-  <version>${nextDevelopmentVersion}-SNAPSHOT</version>
+  <version>3.7</version>
   <packaging>pom</packaging>
   <modules>
     <module>root-java</module>
