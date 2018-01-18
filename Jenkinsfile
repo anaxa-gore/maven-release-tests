@@ -14,14 +14,16 @@ node('master') {
             return;
 
         def nextReleaseVersion = input(
-            message: "Entrer la prochaine version de développement",
+            message: "Prochaine version de développement (correspond à la prochaine release )",
             id: "AskForNextReleaseNumber",
             parameters: [
-                [$class: 'StringParameterDefinition', description: 'Prochaine version', name: 'nextVersion']
+                [$class: 'StringParameterDefinition',
+                 description: 'Prochaine version',
+                 name: 'nextVersion']
             ]);
 
         // @TODO Check format numéro de version
 
-        releaseJava("10.3.3");
+        releaseJava(nextReleaseVersion);
     }
 }
