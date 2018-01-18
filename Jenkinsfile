@@ -17,7 +17,7 @@ node('master') {
             message: "Entrer la prochaine version de développement",
             id: "AskForNextReleaseNumber",
             parameters: [
-                [$class: 'TextParameterDefinition', description: 'Prochaine version', name: 'nextVersion']
+                [$class: 'StringParameterDefinition', description: 'Prochaine version', name: 'nextVersion']
             ]);
 
         // @TODO Check format numéro de version
