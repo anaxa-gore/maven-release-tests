@@ -14,16 +14,22 @@ node('master') {
             return;
 
         def nextReleaseVersion = input(
-            message: "Prochaine version de développement (correspond à la prochaine release )",
+            message: "Prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.",
             id: "AskForNextReleaseNumber",
+            ok: "OK",
             parameters: [
                 [$class: 'StringParameterDefinition',
                  description: 'Prochaine version',
-                 name: 'nextVersion']
+                 name: 'nextVersion',
+                 defaultValue: null]
             ]);
 
         // @TODO Check format numéro de version
 
-        releaseJava(nextReleaseVersion);
+        try {
+            releaseJava(nextReleaseVersion);
+        } catch(e) {
+            throw new Error("La release a échoué", e);
+        }
     }
 }
