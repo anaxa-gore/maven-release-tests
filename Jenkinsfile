@@ -13,17 +13,15 @@ node('master') {
         if(!env.BRANCH_NAME.startsWith("RELEASE_"))
             return;
 
-        releaseJava("10.3.2");
-/**        sshagent(credentials: ['GitlabApave']) {
-            sh 'git checkout develop'
-            sh 'git pull'
-            sh 'git remote -v'
-            sh "touch toto.txt"
-            sh 'echo "coco" >> toto.txt'
-            sh "git add -A"
-            sh "git commit -a -m 'Test !!!'"
-            sh "git push --all origin"
-        }
-**/
+        def nextReleaseVersion = input(
+            message: "Entrer la prochaine version de développement"
+            id: "AskForNextReleaseNumber",
+            parameters: [
+                [$class: 'TextParameterDefinition', description: 'Prochaine version', name: nextVersion]
+            ]);
+
+        // @TODO Check format numéro de version
+
+        releaseJava("10.3.3");
     }
 }
