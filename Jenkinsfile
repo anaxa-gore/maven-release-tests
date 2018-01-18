@@ -14,7 +14,7 @@ node('master') {
             return;
 
         def nextReleaseVersion = input(
-            message: "Prochaine version de développement",
+            message: "Prochaine version de développement (X.Y.1)",
             id: "AskForNextReleaseNumber",
             ok: "OK"
             parameters: [
