@@ -5,10 +5,10 @@
   <parent>
     <groupId>com.apave</groupId>
     <artifactId>root</artifactId>
-    <version>${nextDevelopmentVersion}-SNAPSHOT</version>
+    <version>10.3.2-SNAPSHOT</version>
   </parent>
   <artifactId>root-java</artifactId>
-  <version>${nextDevelopmentVersion}-SNAPSHOT</version>
+  <version>10.3.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Projet racine projets JAVA</name>
   <description>Projet racine spécifiant par exemple, les repositories de snapshots et releases, les librairies JUnit etc.</description>
