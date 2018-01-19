@@ -46,6 +46,7 @@ node('master') {
             return;
 
         lock(resource:'release', inversePrecedence:true) {
+            milestone();
             def nextReleaseVersion = input(
                 message: "Préparation de la prochaine version",
                 id: "AskForNextReleaseNumber",
