@@ -45,8 +45,8 @@ node('master') {
         if(!env.BRANCH_NAME.startsWith("RELEASE_"))
             return;
 
+        milestone();
         lock(resource:'release', inversePrecedence:true) {
-            milestone();
             def nextReleaseVersion = input(
                 message: "Préparation de la prochaine version",
                 id: "AskForNextReleaseNumber",
