@@ -38,32 +38,33 @@ node('master') {
     stage("Déploiement Dev") {
         sh 'echo Déploiement'
     }
+}
 
-    stage('Release') {
-        if(!env.BRANCH_NAME.startsWith("RELEASE_"))
-            return;
+if(env.BRANCH_NAME.startsWith("RELEASE_")) {
+    milestone();
+    def nextReleaseVersion = null;
+    lock(resource:'release', inversePrecedence:true) {
+         nextReleaseVersion = input(
+            message: "Préparation de la prochaine version",
+            id: "AskForNextReleaseNumber",
+            ok: "OK",
+            parameters: [
+                [$class: 'StringParameterDefinition',
+                 description: 'Entrer le numéro de la prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.',
+                 name: 'Numéro de version',
+                 defaultValue: null]
+            ]);
+    }
+    milestone();
 
-        milestone();
-        lock(resource:'release', inversePrecedence:true) {
-            def nextReleaseVersion = input(
-                message: "Préparation de la prochaine version",
-                id: "AskForNextReleaseNumber",
-                ok: "OK",
-                parameters: [
-                    [$class: 'StringParameterDefinition',
-                     description: 'Entrer le numéro de la prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.',
-                     name: 'Numéro de version',
-                     defaultValue: null]
-                ]);
-        }
-        milestone();
-
-        // @TODO Check format numéro de version
-
-        try {
-            releaseJava(nextReleaseVersion);
-        } catch(e) {
-            throw new Error("La release a échoué", e);
+    node('master') {
+        stage('Release') {
+            // @TODO Check format numéro de version
+            try {
+                releaseJava(nextReleaseVersion);
+            } catch(e) {
+                throw new Error("La release a échoué", e);
+            }
         }
     }
 }
