@@ -55,8 +55,8 @@ node('master') {
                      name: 'Numéro de version',
                      defaultValue: null]
                 ]);
-            milestone();
         }
+        milestone();
 
         // @TODO Check format numéro de version
 
