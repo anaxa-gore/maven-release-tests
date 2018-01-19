@@ -26,7 +26,7 @@ node('master') {
         } finally {
             // Si des tests ont bien été exécutés, on les stocke
             def reports = findFiles(glob: '**/target/surefire-reports/TEST-*.xml');
-            if(!reports)
+            if(!reports?.empty)
                 junit '**/target/surefire-reports/TEST-*.xml'
         }
     }
