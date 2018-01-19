@@ -5,8 +5,9 @@ def mavenConfig = "globalMaven"
 
 node('master') {
     stage('Checkout') {
-        deleteDir()
-        checkout scm
+        milestone();
+        deleteDir();
+        checkout scm;
     }
 
     stage("Build") {
