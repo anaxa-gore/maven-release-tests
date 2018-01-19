@@ -4,7 +4,7 @@ def maven = "M3"
 def mavenConfig = "globalMaven"
 
 // On ne build jamais la branche master
-if(!env.BRANCH_NAME.equals("master"))
+if(env.BRANCH_NAME.equals("master"))
     return;
 
 milestone();
