@@ -10,7 +10,7 @@
   <artifactId>root-java</artifactId>
   <version>4.2-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Projet racine projets JAVA</name>
+  <name>Projet racine projets JAVA PLOUF</name>
   <description>Projet racine spécifiant par exemple, les repositories de snapshots et releases, les librairies JUnit etc.</description>
   <distributionManagement>
     <repository>
