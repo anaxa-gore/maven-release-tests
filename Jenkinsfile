@@ -7,8 +7,6 @@ def mavenConfig = "globalMaven"
 if(env.BRANCH_NAME.equals("master"))
     return;
 
-milestone();
-
 node('master') {
     stage('Checkout') {
         deleteDir();
