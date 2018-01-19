@@ -13,6 +13,7 @@ node('master') {
         if(!env.BRANCH_NAME.startsWith("RELEASE_"))
             return;
 
+        milestone();
         def nextReleaseVersion = input(
             message: "Prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.",
             id: "AskForNextReleaseNumber",
@@ -23,6 +24,7 @@ node('master') {
                  name: 'nextVersion',
                  defaultValue: null]
             ]);
+        milestone();
 
         // @TODO Check format numéro de version
 
