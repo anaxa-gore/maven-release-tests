@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.apave</groupId>
     <artifactId>root</artifactId>
-    <version>4.0-SNAPSHOT</version>
+    <version>4.1-SNAPSHOT</version>
   </parent>
   <artifactId>root-java</artifactId>
-  <version>4.0-SNAPSHOT</version>
+  <version>4.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Projet racine projets JAVA global</name>
+  <name>Projet racine projets JAVA</name>
   <description>Projet racine spécifiant par exemple, les repositories de snapshots et releases, les librairies JUnit etc.</description>
   <distributionManagement>
     <repository>
