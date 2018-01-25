@@ -10,7 +10,7 @@
   <artifactId>root-java</artifactId>
   <version>5.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
-  <name>Projet racine projets JAVA</name>
+  <name>Projet racine projets JAVA TEST</name>
   <description>Projet racine spécifiant par exemple, les repositories de snapshots et releases, les librairies JUnit etc.</description>
   <distributionManagement>
     <repository>
