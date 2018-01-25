@@ -43,7 +43,19 @@ node('master') {
 if(env.BRANCH_NAME.startsWith("RELEASE_")) {
     milestone();
     def nextReleaseVersion = null;
-    lock(resource:'release', inversePrecedence:true) {
+    def startRelease = false;
+    //lock(resource:'release', inversePrecedence:true) {
+        timeout(time: 2, unit:'MINUTES'){
+             startRelease = input(
+                message: "Déclencher la release ?",
+                id: "startRelease",
+                ok: 'Oui',
+                defaultValue: false);
+        }
+
+        if(!startRelease)
+            return;
+
          nextReleaseVersion = input(
             message: "Préparation de la prochaine version",
             id: "AskForNextReleaseNumber",
@@ -54,7 +66,7 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
                  name: 'Numéro de version',
                  defaultValue: null]
             ]);
-    }
+    //}
     milestone();
 
     node('master') {
