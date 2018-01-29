@@ -4,17 +4,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.apave</groupId>
-        <artifactId>root</artifactId>
-        <version>1.0</version>
-    </parent>
-
     <artifactId>root-esb</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Projet racine projets ESB</name>
     <description>Projet racine spécifiant les repositories de snapshots et releases etc.</description>
+
+    <parent>
+        <groupId>com.apave</groupId>
+        <artifactId>root</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <distributionManagement>
         <repository>

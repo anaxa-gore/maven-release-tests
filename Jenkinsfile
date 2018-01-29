@@ -41,7 +41,7 @@ node('master') {
 }
 
 if(env.BRANCH_NAME.startsWith("RELEASE_")) {
-    milestone();
+    /*milestone();
     def nextReleaseVersion = null;
     def startRelease = false;
     //lock(resource:'release', inversePrecedence:true) {
@@ -50,7 +50,10 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
                 message: "Déclencher la release ?",
                 id: "startRelease",
                 ok: 'Oui',
-                defaultValue: false);
+                parameters: [
+                    [$class: 'BooleanParameterDefinition', defaultValue: true, description: '', name: 'Please confirm you agree with this']
+                    ])
+                );
         }
 
         if(!startRelease)
@@ -67,13 +70,14 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
                  defaultValue: null]
             ]);
     //}
-    milestone();
+    milestone();*/
 
     node('master') {
         stage('Release') {
             // @TODO Check format numéro de version
             try {
                 releaseJava(nextReleaseVersion);
+                mvnExecute("mvn deploy -DskipTests", maven, mavenConfig);
             } catch(e) {
                 throw new Error("La release a échoué", e);
             }
