@@ -14,7 +14,7 @@ node('master') {
     }
 
     stage("Build") {
-        mvnExecute("mvn clean", maven, mavenConfig);
+        mvnExecute("mvn clean -e -X", maven, mavenConfig);
         mvnExecute("mvn install -DskipTests", maven, mavenConfig)
     }
 
@@ -41,9 +41,9 @@ node('master') {
 }
 
 if(env.BRANCH_NAME.startsWith("RELEASE_")) {
-    /*milestone();
+    milestone();
     def nextReleaseVersion = null;
-    def startRelease = false;
+    /*def startRelease = false;
     //lock(resource:'release', inversePrecedence:true) {
         timeout(time: 2, unit:'MINUTES'){
              startRelease = input(
@@ -58,19 +58,19 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
 
         if(!startRelease)
             return;
-
+*/
          nextReleaseVersion = input(
             message: "Préparation de la prochaine version",
             id: "AskForNextReleaseNumber",
             ok: "OK",
             parameters: [
                 [$class: 'StringParameterDefinition',
-                 description: 'Entrer le numéro de la prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.',
+                 description: 'Entrer le numéro de la prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.\nCliquer sur annuler pour repousser la release.',
                  name: 'Numéro de version',
                  defaultValue: null]
             ]);
     //}
-    milestone();*/
+    milestone();
 
     node('master') {
         stage('Release') {
