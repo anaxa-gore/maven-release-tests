@@ -18,11 +18,11 @@
 
     <distributionManagement>
         <repository>
-            <id>releases</id>
+            <id>releases-esb</id>
             <url>${apave.nexus.root.repository.url}/maven-esb-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
+            <id>snapshots-esb</id>
             <url>${apave.nexus.root.repository.url}/maven-esb-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>

@@ -18,11 +18,11 @@
 
     <distributionManagement>
         <repository>
-            <id>releases</id>
+            <id>releases-etl</id>
             <url>${apave.nexus.root.repository.url}/maven-etl-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>snapshots</id>
+            <id>snapshots-etl</id>
             <url>${apave.nexus.root.repository.url}/maven-etl-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
