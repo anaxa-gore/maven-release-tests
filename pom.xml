@@ -29,14 +29,4 @@
             <url>${apave.nexus.root.repository.url}/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-release-plugin</artifactId>
-            <version>2.5.3</version>
-            <type>maven-plugin</type>
-        </dependency>
-    </dependencies>
-
 </project>
