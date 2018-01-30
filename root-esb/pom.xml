@@ -16,14 +16,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <distributionManagement>
-        <repository>
-            <id>releases-esb</id>
-            <url>${apave.nexus.root.repository.url}/maven-esb-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots-esb</id>
-            <url>${apave.nexus.root.repository.url}/maven-esb-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>releases-esb</id>-->
+            <!--<url>${apave.nexus.root.repository.url}/maven-esb-releases/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>snapshots-esb</id>-->
+            <!--<url>${apave.nexus.root.repository.url}/maven-esb-snapshots/</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
 </project>

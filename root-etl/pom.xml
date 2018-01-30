@@ -16,14 +16,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <distributionManagement>
-        <repository>
-            <id>releases-etl</id>
-            <url>${apave.nexus.root.repository.url}/maven-etl-releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots-etl</id>
-            <url>${apave.nexus.root.repository.url}/maven-etl-snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>releases-etl</id>-->
+            <!--<url>${apave.nexus.root.repository.url}/maven-etl-releases/</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>snapshots-etl</id>-->
+            <!--<url>${apave.nexus.root.repository.url}/maven-etl-snapshots/</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
 </project>
