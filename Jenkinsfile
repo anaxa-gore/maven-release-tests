@@ -32,7 +32,10 @@ node('master') {
     }
 
     stage("Publication Nexus") {
-        mvnExecute("mvn deploy -DskipTests -e -X", maven, mavenConfig);
+        withMaven(maven:maven, mavenSettingsConfig:mavenConfig) {
+            sh "mvn deploy -DskipTests -e -X"
+        }
+        //mvnExecute("mvn deploy -DskipTests -e -X", maven, mavenConfig);
     }
 
     stage("Déploiement Dev") {
