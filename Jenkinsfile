@@ -14,7 +14,7 @@ node('master') {
     }
 
     stage("Build") {
-        mvnExecute("mvn clean -e -X", maven, mavenConfig);
+        mvnExecute("mvn clean", maven, mavenConfig);
         mvnExecute("mvn install -DskipTests", maven, mavenConfig)
     }
 
@@ -32,7 +32,7 @@ node('master') {
     }
 
     stage("Publication Nexus") {
-        mvnExecute("mvn deploy -DskipTests", maven, mavenConfig);
+        mvnExecute("mvn deploy -DskipTests -e -X", maven, mavenConfig);
     }
 
     stage("Déploiement Dev") {
