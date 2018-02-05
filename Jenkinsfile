@@ -1,16 +1,10 @@
 @Library('apave-shared-library') _
 
-import com.apave.jenkins.deploy.Deployer;
-
-//class DevDeployer implements Deployer {
-//    boolean deploy(){
-//        sh 'echo CA MARCHE !!'
-//    }
-//}
-//def devDeployer = new DevDeployer();
-
+/**
+ * Ici, mettre le code pour déployer en dev.
+ */
 def deployDev = {
-    sh "echo CA MARCHE !!!";
+    sh "echo CA MARCHE !!!"
 }
 
-buildJava(deployDev);
+buildJava(deployDev)
