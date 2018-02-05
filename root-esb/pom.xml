@@ -7,7 +7,7 @@
     <artifactId>root-esb</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Projet racine projets ESB</name>
+    <name>Projet racine des projets ESB</name>
     <description>Projet racine spécifiant les repositories de snapshots et releases etc.</description>
 
     <parent>
