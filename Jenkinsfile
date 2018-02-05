@@ -19,13 +19,13 @@ node('master') {
         mvnExecute("mvn install -DskipTests", maven, mavenConfig)
     }
 
-    stage("Test & Qualité") {
+    stage("Test & QualitÃ©") {
         try {
-            // Lancement des tests & du contrôle qualité Sonar
+            // Lancement des tests & du contrÃ´le qualitÃ© Sonar
             mvnExecute("mvn test", maven, mavenConfig);
             mvnExecute("mvn sonar:sonar", maven, mavenConfig);
         } finally {
-            // Si des tests ont bien été exécutés, on les stocke
+            // Si des tests ont bien Ã©tÃ© exÃ©cutÃ©s, on les stocke
             def reports = findFiles(glob: '**/target/surefire-reports/TEST-*.xml');
             if(reports?.size() != 0)
                 junit '**/target/surefire-reports/TEST-*.xml'
@@ -39,8 +39,8 @@ node('master') {
         //mvnExecute("mvn deploy -DskipTests -e -X", maven, mavenConfig);
     }
 
-    stage("Déploiement Dev") {
-        sh 'echo Déploiement'
+    stage("DÃ©ploiement Dev") {
+        sh 'echo DÃ©ploiement'
     }
 }
 
@@ -51,7 +51,7 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
     //lock(resource:'release', inversePrecedence:true) {
         timeout(time: 2, unit:'MINUTES'){
              startRelease = input(
-                message: "Déclencher la release ?",
+                message: "DÃ©clencher la release ?",
                 id: "startRelease",
                 ok: 'Oui',
                 parameters: [
@@ -64,13 +64,13 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
             return;
 */
          nextReleaseVersion = input(
-            message: "Préparation de la prochaine version",
+            message: "PrÃ©paration de la prochaine version",
             id: "AskForNextReleaseNumber",
             ok: "OK",
             parameters: [
                 [$class: 'StringParameterDefinition',
-                 description: 'Entrer le numéro de la prochaine version de développement (X.Y.1).\nPour une branche corrective, laisser vide.\nCliquer sur annuler pour repousser la release.',
-                 name: 'Numéro de version',
+                 description: 'Entrer le numÃ©ro de la prochaine version de dÃ©veloppement (X.Y.1).\nPour une branche corrective, laisser vide.\nCliquer sur annuler pour repousser la release.',
+                 name: 'NumÃ©ro de version',
                  defaultValue: null]
             ]);
     //}
@@ -78,12 +78,12 @@ if(env.BRANCH_NAME.startsWith("RELEASE_")) {
 
     node('master') {
         stage('Release') {
-            // @TODO Check format numéro de version
+            // @TODO Check format numÃ©ro de version
             try {
                 releaseJava(nextReleaseVersion);
                 mvnExecute("mvn deploy -DskipTests", maven, mavenConfig);
             } catch(e) {
-                throw new Error("La release a échoué", e);
+                throw new Error("La release a Ã©chouÃ©", e);
             }
         }
     }
