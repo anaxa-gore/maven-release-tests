@@ -1,2 +1,7 @@
 @Library('apave-shared-library') _
-buildJava();
+
+def deployDev() {
+    sh 'echo CA MARCHE !!'
+}
+
+buildJava(deployDev);
