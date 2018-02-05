@@ -17,6 +17,7 @@
 
     <properties>
         <apave.nexus.root.repository.url>http://slx0007p.cld.apave.grp:8081/repository</apave.nexus.root.repository.url>
+        <maven.deploy.skip>true</maven.deploy.skip>
     </properties>
 
     <!--<distributionManagement>-->
