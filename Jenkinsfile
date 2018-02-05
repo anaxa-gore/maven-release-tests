@@ -37,7 +37,7 @@ node('master') {
 //            sh "mvn deploy -DskipTests -e -X"
 //        }
 
-        mvnExecute("mvn deploy -DskipTests", maven, mavenConfig);
+        mvnExecute("mvn deploy -DskipTests -e -X", maven, mavenConfig);
     }
 
     stage("Déploiement Dev") {
