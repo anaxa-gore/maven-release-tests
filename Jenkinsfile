@@ -1,6 +1,6 @@
 @Library('apave-shared-library') _
 
-import com.apave.jenkins.deploy.*;
+import com.apave.jenkins.deploy.Deployer;
 
 class DevDeployer implements Deployer {
     boolean deploy(){
