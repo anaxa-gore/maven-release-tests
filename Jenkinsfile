@@ -1,7 +1,10 @@
 @Library('apave-shared-library') _
 
-def deployDev() {
-    sh 'echo CA MARCHE !!'
+class DevDeployer implements Deployer {
+    boolean deploy(){
+        sh 'echo CA MARCHE !!'
+    }
 }
 
-buildJava(deployDev);
+def devDeployer = new DevDeployer();
+buildJava(devDeployer);
