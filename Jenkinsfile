@@ -13,6 +13,7 @@ node('master') {
         checkout scm;
     }
 
+
     stage("Build") {
         mvnExecute("mvn clean", maven, mavenConfig);
         mvnExecute("mvn install -DskipTests", maven, mavenConfig)
