@@ -17,17 +17,6 @@
 
     <properties>
         <apave.nexus.root.repository.url>http://slx0007p.cld.apave.grp:8081/repository</apave.nexus.root.repository.url>
-        <maven.deploy.skip>true</maven.deploy.skip>
+        <maven.deploy.skip>true</maven.deploy.skip> <!-- On ne déploie pas la racine -->
     </properties>
-
-    <!--<distributionManagement>-->
-        <!--<repository>-->
-            <!--<id>releases</id>-->
-            <!--<url>${apave.nexus.root.repository.url}/maven-releases/</url>-->
-        <!--</repository>-->
-        <!--<snapshotRepository>-->
-            <!--<id>snapshots</id>-->
-            <!--<url>${apave.nexus.root.repository.url}/maven-snapshots/</url>-->
-        <!--</snapshotRepository>-->
-    <!--</distributionManagement>-->
 </project>
