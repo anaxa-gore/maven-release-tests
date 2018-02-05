@@ -2,11 +2,15 @@
 
 import com.apave.jenkins.deploy.Deployer;
 
-class DevDeployer implements Deployer {
-    boolean deploy(){
-        sh 'echo CA MARCHE !!'
-    }
+//class DevDeployer implements Deployer {
+//    boolean deploy(){
+//        sh 'echo CA MARCHE !!'
+//    }
+//}
+//def devDeployer = new DevDeployer();
+
+def deployDev = {
+    sh "echo CA MARCHE !!!";
 }
 
-def devDeployer = new DevDeployer();
-buildJava(devDeployer);
+buildJava(deployDev);
