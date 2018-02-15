@@ -7,4 +7,4 @@ def deployDev = {
     sh "echo CA MARCHE !!!"
 }
 
-buildJava(deployDev)
+pipelineJava(deployDev)
